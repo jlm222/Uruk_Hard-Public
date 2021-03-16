@@ -1,0 +1,70 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    /*font-size: 16px;*/
+    line-height: 1.5;
+}
+
+.nav {
+    &__link {
+        font-size: $nav-fz;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $color-black;
+
+        &:hover {
+        }
+    }
+}
+
+.comic {
+    &__title {
+        font-size: $comic-title;
+        font-weight: 700;
+
+        @include respond(phone) {
+            font-size: 2.2rem;
+        }
+    }
+
+    &__date {
+        font-size: $comic-date;
+        font-weight: 400;
+
+        @include respond(phone) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.social {
+    &__link {
+        font-size: $social-fz;
+        color: $color-aqua;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 400;
+        transition: font-weight 0.1s linear;
+
+        &:hover {
+            color: $color-aqua-bright;
+            font-weight: 600;
+        }
+    }
+}
+
+.copyright {
+    &__text {
+        font-size: $copyright-fz;
+        font-weight: 400;
+    }
+}
+
+.archive {
+    &__title {
+        font-size: 2.2rem;
+        text-align: center;
+        display: block;
+    }
+}

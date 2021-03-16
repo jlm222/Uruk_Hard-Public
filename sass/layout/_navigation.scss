@@ -1,0 +1,160 @@
+.nav {
+    grid-row: 2;
+    grid-column: center-start / center-end;
+
+    margin-bottom: 2rem;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(5, [col-start] min-content [col-end]);
+        grid-template-rows: repeat(2, min-content);
+
+        list-style: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-items: center;
+        align-items: flex-end;
+    }
+
+    &__item {
+        margin: 0 2.4rem;
+        text-align: center;
+        cursor: pointer;
+        overflow: visible;
+
+        @include respond(tab-land) {
+            margin: 0 2.6rem; // width < 1200?
+        }
+
+        @include respond(tab-port) {
+            margin: 0 3rem; // width < 900?
+        }
+
+        @include respond(phone) {
+            margin: 0 2.4rem; // width < 600?
+        }
+
+        @include respond(phone-sm) {
+            margin: 0 2.2rem; // width < 400?
+        }
+
+        &--hand {
+            &1 {
+                @include respond(tab-port) {
+                    grid-row: 1; // width < 900?
+                    grid-column: 1;
+                }
+            }
+
+            &2 {
+                @include respond(tab-port) {
+                    grid-row: 1; // width < 900?
+                    grid-column: 3;
+                }
+            }
+        }
+        &--arrow {
+            &1 {
+                @include respond(tab-port) {
+                    grid-row: 2; // width < 900?
+                    grid-column: 1;
+                }
+            }
+
+            &2 {
+                @include respond(tab-port) {
+                    grid-row: 2; // width < 900?
+                    grid-column: 3;
+                }
+            }
+
+            @include respond(tab-port) {
+                grid-row: 2; // width < 900?
+                grid-column: 2;
+            }
+        }
+
+        &--scroll {
+            @include respond(tab-port) {
+                grid-row: 1; // width < 900?
+                grid-column: col-start 2 / col-start 3; // width < 900?
+            }
+        }
+
+        &:hover img {
+        }
+
+        &--disabled {
+            opacity: 0.46;
+            cursor: default;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: auto;
+        margin-bottom: 1rem;
+        transition: all 0.2s ease-out 0.04s;
+        backface-visibility: hidden;
+    }
+}
+
+.hand-icon {
+    height: 4.4rem;
+
+    @include respond(tab-land) {
+        height: 4.2rem; // width < 1200?
+    }
+
+    @include respond(tab-port) {
+        height: 4.6rem; // width < 900?
+    }
+
+    @include respond(phone) {
+        height: 4.8rem; // width < 600?
+    }
+
+    @include respond(phone-sm) {
+        height: 4rem; // width < 400?
+    }
+}
+
+.arrow-icon {
+    height: 3rem;
+
+    @include respond(tab-land) {
+        height: 2.8rem; // width < 1200?
+    }
+
+    @include respond(tab-port) {
+        height: 2.8rem; // width < 900?
+    }
+
+    @include respond(phone) {
+        height: 2.8rem; // width < 600?
+    }
+
+    @include respond(phone-sm) {
+        height: 2.4rem; // width < 400?
+    }
+}
+
+.archive-icon {
+    height: 5.2rem;
+
+    @include respond(tab-land) {
+        height: 5rem; // width < 1200?
+    }
+
+    @include respond(tab-port) {
+        height: 5rem; // width < 900?
+    }
+
+    @include respond(phone) {
+        height: 5.4rem; // width < 600?
+    }
+
+    @include respond(phone-sm) {
+        height: 4.8rem; // width < 400?
+    }
+}
