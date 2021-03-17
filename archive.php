@@ -1,14 +1,13 @@
-<?php require_once "includes/db.php" ?>
-<?php require_once "includes/functions.php" ?>
-<?php require_once "includes/header.php" ?>
+<?php require "includes/db.inc.php" ?>
+<?php require "includes/autoloader.inc.php" ?>
 
+<?php require "includes/header.inc.php" ?>
 
 <main class="archive">
     <h1 class="archive__title">Archive</h1>
     <ul class="archive__list">
 
 <?php
-
     // List items per page
     $per_page = 20;
 
@@ -36,10 +35,13 @@
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['page_1' => $page_1, 'per_page' => $per_page]);
 
+    $comicArchive = new ComicArchive;
     $loopCounter = 0;
+
     while($row = $stmt->fetch()) {
         global $loopCounter;
         global $numRows;
+        
         $post_id = $row['post_id'];
         $post_title = $row['post_title'];
         $post_image = $row['post_image'];
@@ -59,45 +61,24 @@
         $loopCounter++;
 
 ?>  
-
         <li class="archive__item">
             <h4 class="archive__dates"><?= $post_date; ?>&nbsp;</h4>
             <h3 class="archive__titles">&nbsp;&nbsp;<?= $post_title; ?></h3>
-            <a href="<?php archiveCheck($post_id, $loopCounter, $numRows); ?>" class="archive__link">
+            <a href="<?php $comicArchive->archiveCheck($post_id, $loopCounter, $numRows); ?>" class="archive__link">
                 <img src="images/comics/<?= $post_id; ?>/<?= $post_image; ?>" alt="<?= $post_alt_text; ?>" class="archive__img" 
                 title="<?= $post_hover_text ;?>">  
             </a>
         </li>
 
-    <?php  } 
-
+    <?php  }
         // Close statement
         unset($stmt);
             
         // Close connection
         unset($pdo);
-        
     ?>
 
     </ul>
 </main>
 
-
-<!-- Pager to be implemented in the future, for the moment not needed -->
-
-<!-- <ul class="pager">
-        <?php
-            // for ($i=1; $i <= $count; $i++) { 
-            //     if ($i == $page) {
-            //         echo "<li class='pager__item'><a class='active_link' href='archive.php?page={$i}'>{$i}</a></li>";
-                
-            //     } else {
-            //         echo "<li class='pager__item'><a class='' href='archive.php?page={$i}'>{$i}</a></li>";
-            //     }
-            // }
-        ?>
-        </ul> -->
-
-
-
-<?php include "includes/footer.php" ?>
+<?php require "includes/footer.inc.php" ?>

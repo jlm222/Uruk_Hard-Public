@@ -1,9 +1,11 @@
-<?php require_once "includes/db.php" ?>
-<?php require_once "includes/functions.php" ?>
+<?php require "includes/db.inc.php" ?>
+<?php require "includes/autoloader.inc.php" ?>
 
-<?php require_once "includes/header.php" ?>
+<?php require "includes/header.inc.php" ?>
 
-<?php require_once "includes/navigation_index.php" ?>
-<?php require_once "includes/comic_index.php" ?>
+<?php require "includes/navigation_index.inc.php" ?>
 
-<?php require_once "includes/footer.php" ?>
+<?php require "includes/comic_index.inc.php" ?>
+<?php require "includes/comic_display.inc.php"; ?>
+
+<?php require "includes/footer.inc.php" ?>

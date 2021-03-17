@@ -7,13 +7,13 @@
                 exit('Please fill in both username and password.');
             }
 
-        $username = trim($_POST['username']);
-        $password = trim($_POST['user_password']);
+            $username = trim($_POST['username']);
+            $password = trim($_POST['user_password']);
 
-        require_once "../../includes/db.php";
+            require "../../includes/db.inc.php";
 
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? ");
-        $stmt->execute([$username]);
+            $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? ");
+            $stmt->execute([$username]);
         }
 
         $row = $stmt->fetch();
@@ -42,6 +42,5 @@
         header("Location: ../signin.php");
         exit();
     }
-
 
 ?>

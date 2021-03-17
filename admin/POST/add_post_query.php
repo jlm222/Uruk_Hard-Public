@@ -3,8 +3,8 @@
 ////// ADD POST TO DATABASE
 if(isset($_POST['submit'])) {
     
-        require_once "../../includes/db.php";
-        require_once "../includes/admin_functions.php"; 
+        require "../../includes/db.inc.php";
+        require "../includes/admin_functions.php"; 
         
         $post_title = $_POST['post_title'];
 

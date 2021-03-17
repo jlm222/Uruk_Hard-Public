@@ -1,5 +1,5 @@
-<?php require_once "includes/admin_header.php"; ?>
-<?php require_once "includes/admin_navigation.php"; ?>
+<?php require "includes/admin_header.php"; ?>
+<?php require "includes/admin_navigation.php"; ?>
 
 
 <?php
@@ -104,4 +104,4 @@ if(isset($_GET['src'])) {
 
 </form>
 </main>
-<?php include "includes/admin_footer.php"; ?>
+<?php require "includes/admin_footer.php"; ?>

@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST["p_id"])) {
-    require_once "../../includes/db.php";
+    require "../../includes/db.inc.php";
     
     $post_id = trim($_POST["p_id"]);
     

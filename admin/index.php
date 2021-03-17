@@ -1,7 +1,7 @@
-<?php require_once "includes/admin_header.php"; ?>
-<?php require_once "includes/admin_navigation.php"; ?>
-<?php require_once "POST/admin_checkboxes.php"; ?>
-<?php require_once "POST/admin_post_status.php"; ?>
+<?php require "includes/admin_header.php"; ?>
+<?php require "includes/admin_navigation.php"; ?>
+<?php require "POST/admin_checkboxes.php"; ?>
+<?php require "POST/admin_post_status.php"; ?>
 
 <main class="col-md-10 ms-sm-auto ms-sm-auto px-lg-1 ps-s-0">
 
@@ -91,4 +91,4 @@
 </form>
 </main>
 
-<?php include "includes/admin_footer.php"; ?>
+<?php require "includes/admin_footer.php"; ?>

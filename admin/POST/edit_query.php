@@ -1,8 +1,8 @@
 <?php 
 
 if(isset($_POST['update_post'])) {
-    require_once "../../includes/db.php";
-    require_once "../includes/admin_functions.php"; 
+    require "../../includes/db.inc.php";
+    require "../includes/admin_functions.php"; 
     
     $post_id = $_POST['post_id'];
     $post_title = $_POST['post_title'];

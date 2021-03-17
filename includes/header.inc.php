@@ -14,8 +14,6 @@
     <link href="css/brands.min.css" rel="stylesheet">
     <link href="css/fontawesome.min.css" rel="stylesheet">
 
-  
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">

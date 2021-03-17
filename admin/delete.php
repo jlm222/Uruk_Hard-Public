@@ -1,5 +1,5 @@
-<?php require_once "includes/admin_header.php"; ?>
-<?php require_once "includes/admin_navigation.php"; ?>
+<?php require "includes/admin_header.php"; ?>
+<?php require "includes/admin_navigation.php"; ?>
 
 <?php
 
@@ -50,7 +50,7 @@ if (($_GET['p_id'])) {
         </div>
     </div>
         
-    <form class="col-sm-1 mt-5" action="includes/delete_query.includes.php" method="POST">
+    <form class="col-sm-1 mt-5" action="POST/delete_query.php" method="POST">
                 <h2 class="mb-3">Delete?</h2>
             <div class="col-2 d-grid gap-5">
                 <button type="submit" class="btn-lg btn btn-danger px-5" name="p_id" value="<?= trim($_GET["p_id"]); ?>">Yes</button>
@@ -61,4 +61,4 @@ if (($_GET['p_id'])) {
 
 </main>
 
-<?php require_once "includes/admin_footer.php"; ?>
+<?php require "includes/admin_footer.php"; ?>

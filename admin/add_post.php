@@ -1,5 +1,5 @@
-<?php require_once "includes/admin_header.php"; ?>
-<?php require_once "includes/admin_navigation.php"; ?>
+<?php require "includes/admin_header.php"; ?>
+<?php require "includes/admin_navigation.php"; ?>
 
 
 <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-md-4">
@@ -14,7 +14,7 @@ if(isset($_GET['src'])) {
 } 
 ?>
 
-<form action="includes/add_post_query.php" method="POST" enctype="multipart/form-data">
+<form action="POST/add_post_query.php" method="POST" enctype="multipart/form-data">
     <div class="row g-3 mt-2 mt-md-0">
         <div class="col-md-6 col-lg-4">
             <label for="post_title" class="form-label">Title</label>
@@ -72,4 +72,4 @@ if(isset($_GET['src'])) {
 </form>
 </main>
 
-<?php include "includes/admin_footer.php"; ?>
+<?php require "includes/admin_footer.php"; ?>
