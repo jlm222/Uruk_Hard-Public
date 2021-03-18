@@ -12,23 +12,23 @@
             $this->conn = $pdo;
         }
 
-        // NEXT COMIC NAV FOR FIRST COMIC PAGE
+        // Next comic nav for first comic page
         public function nextComicFirst() {
             return $this->conn->query($this->commonQuery . " LIMIT 1,1")->fetchColumn();
         }
 
-        // PREVIOUS COMIC NAV FOR INDEX PAGE 
+        // Previous comic nav for index page 
         public function indexPrevComic() {            
             return $this->conn->query($this->commonQuery . " DESC LIMIT 1,1")->fetchColumn();
         }
 
-        // GETS FIRST POST ID, USED FOR PREVIOUS COMIC NAV
+        // Gets first post id, used for previous comic nav
         public function firstPostId() {
             $this->firstPostId = $this->conn->query($this->commonQuery . " LIMIT 1")->fetchColumn();
             return $this->firstPostId;
         }
 
-        // PREVIOUS COMIC NAV
+        // Previous comic nav
         public function prevComic($post_id) {
             $sql = "SELECT max(post_id) FROM posts WHERE post_id < :post_id AND post_status = 'published' AND post_date < CURRENT_TIMESTAMP";
             $stmt = $this->conn->prepare($sql);
@@ -43,13 +43,13 @@
             } 
         }
 
-        // GETS LATEST POST ID, USED FOR NEXT COMIC NAV
+        // Gets latest post id, used for next comic nav
         public function latestPostId() {
             $this->latestPostId = $this->conn->query($this->commonQuery . " DESC LIMIT 1")->fetchColumn();
             return $this->latestPostId;
         }
 
-        // NEXT COMIC NAV
+        // Next comic nav
         public function nextComic($post_id) {
             $sql = "SELECT min(post_id) FROM posts WHERE post_id > :post_id AND post_status = 'published' AND post_date < CURRENT_TIMESTAMP";
             $stmt = $this->conn->prepare($sql);
