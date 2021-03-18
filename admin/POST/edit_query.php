@@ -1,3 +1,5 @@
+<?php require "../includes/session.inc.php"; ?>
+
 <?php 
 
 if(isset($_POST['update_post'])) {
@@ -39,7 +41,9 @@ if(isset($_POST['update_post'])) {
     header( "Location: ../edit_post.php?src=success&p_id={$post_id}");
     exit();
 
+} else {
+    header('Location: error.php');
+    exit();
 }
 
-        
 ?>

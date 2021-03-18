@@ -31,6 +31,9 @@ if (($_GET['p_id'])) {
         
     // Close connection
     unset($pdo);
+} else {
+    header('Location: error.php');
+    exit();
 }
 
 ?>

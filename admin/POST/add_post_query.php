@@ -1,3 +1,5 @@
+<?php require "../includes/session.inc.php"; ?>
+
 <?php
 
 ////// ADD POST TO DATABASE
@@ -43,6 +45,10 @@ if(isset($_POST['submit'])) {
     
         header( "Location: ../add_post.php?src=success&p_id={$post_id}");
         exit();
-    }
+
+} else {
+    header('Location: error.php');
+    exit();
+}
 
 ?>

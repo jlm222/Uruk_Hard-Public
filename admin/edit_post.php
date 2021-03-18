@@ -3,13 +3,10 @@
 
 
 <?php
-    if(!trim($_GET['p_id'])) {
-        header('Location: ../error.php');
-        exit();
-    } else if(trim($_GET['p_id'])) {
-        $p_id = trim($_GET['p_id']);
-    }
-
+    if(trim($_GET['p_id'])) {
+    
+    $p_id = trim($_GET['p_id']);
+    
     $stmt = $pdo->prepare("SELECT * FROM posts WHERE post_id = ?"); 
     $stmt->execute([$p_id]);
 
@@ -31,6 +28,10 @@
         
     // Close connection
     unset($pdo);
+    } else {
+        header('Location: error.php');
+        exit();
+    }
 ?>
 
 <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-md-4">

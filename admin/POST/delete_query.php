@@ -1,3 +1,5 @@
+<?php require "../includes/session.inc.php"; ?>
+
 <?php
 
 if(isset($_POST["p_id"])) {
@@ -16,11 +18,12 @@ if(isset($_POST["p_id"])) {
         // Close connection
         unset($pdo);
         
-        // Records deleted successfully. Redirect to index
+        // Record deleted successfully. Redirect to index
         header("location: ../index.php");
         exit();
     } else {
-        echo "Oops! Something went wrong. Please try again later.";
+        header('Location: error.php');
+        exit();
     }
     
     ///// WIP -- remove image directory when post is deleted

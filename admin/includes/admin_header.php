@@ -1,18 +1,8 @@
-<?php session_start(); ?>
-<?php require_once "../includes/db.inc.php"; ?>
-<?php require_once "includes/admin_functions.php"; ?>
+<?php require "includes/session.inc.php"; ?>
 
-<?php
-    if(!isset( $_SESSION['user_id'], $_SESSION['username'], $_SESSION['user_role'] )) {
+<?php require "../includes/db.inc.php"; ?>
+<?php require "includes/admin_functions.php"; ?>
 
-        header('Location: signin.php');
-        exit();
-
-    } else if ($_SESSION['user_role'] !== 'admin') {
-        header('Location: signin.php');
-        exit();
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
