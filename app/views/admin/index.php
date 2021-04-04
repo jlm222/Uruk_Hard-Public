@@ -7,7 +7,7 @@
 <div class="row ">
   <div class="col-4 mb-4" id="bulkOptionContainer">
       <select class="form-select" name="option" id="">
-          <option value="">Select Options</option>
+          <option value="">Select Option</option>
           <option value="published">Publish</option>
           <option value="draft">Draft</option>
           <option value="delete">Delete</option>
@@ -15,7 +15,7 @@
 
   </div>
   <div class="col-1">
-      <input type="submit" name="submit" class="btn btn-success" value="Apply">
+      <input type="submit" name="submit" class="btn btn-success" value="Apply to checked">
   </div>
 </div>
 

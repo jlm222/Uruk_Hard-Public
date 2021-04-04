@@ -1,3 +1,5 @@
+const URLROOT = 'http://localhost/uruk_mvc';
+
 //// Check All Checkboxes
 $(function () {
     $('#selectAllBoxes').on('click', function () {
@@ -197,11 +199,9 @@ $(function () {
 
 // Toggle active nav link
 $(function () {
-    if ($(location).attr('href') == 'http://localhost/uruk_mvc/admin') {
+    if ($(location).attr('href') == URLROOT + '/admin') {
         $('#nav-dash').addClass('active');
-    } else if (
-        $(location).attr('href') == 'http://localhost/uruk_mvc/admin/addPost'
-    ) {
+    } else if ($(location).attr('href') == URLROOT + '/admin/addPost') {
         $('#nav-add').addClass('active');
     }
 });
