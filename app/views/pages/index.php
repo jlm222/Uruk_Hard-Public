@@ -1,0 +1,1 @@
+<?php require APPROOT . '/views/inc/comic_inc_comp.php'; ?>
