@@ -18,11 +18,11 @@ This holds the public facing files such as the index.php, css, images, JS, fonts
 The index.php loads the base file and instantiates a new Core class which I'll go into further down. 
 <br> <br>
 The .htaccess rewrites the root URL to the public folder, and sets it so that when a URL is requested such as index.php/test, if no "test" file/folder can be found in the public folder, then the URL will be rewritten to index.php?url=test, which enables you to route everything through the index.php file
-<br><br>
+
 
 ## /app
 This holds the majority of the code including:
-<br><br>
+<br>
 ### base.php
 This is loaded by index.php in the public folder. It loads the config file, helper functions and autoloads all classes in the libraries folder.
 
