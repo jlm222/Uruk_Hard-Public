@@ -41,4 +41,4 @@ Parameters are optional, and there can be multiple, like so: example.com/control
 
 
 #### Database.php :
-This connects to the database through PDO. It's inherited into the Dbh model, which is instantiated in the controllers. It may not have been neccesary to separate the Dbh and Database files and create a further layer of abstractionm, but I just preferred to do it this way and keep it separated into it's own file.
+This connects to the database through PDO. It's inherited into the Dbh model, which is instantiated in the controllers. It may not have been neccesary to separate the Dbh and Database files and create a further layer of abstraction, but I just preferred to do it this way and keep it separated into it's own file.
