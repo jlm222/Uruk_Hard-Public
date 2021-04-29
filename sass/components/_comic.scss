@@ -2,9 +2,6 @@
     grid-row: 3;
     grid-column: center-start / center-end;
 
-    &__container {
-    }
-
     &__img {
         height: 100%;
         width: 100%;
@@ -26,8 +23,8 @@
     }
 
     &__info {
-        margin-bottom: 10rem;
         margin-left: 22%;
+        align-self: flex-start;
 
         @include respond(tab-land) {
         }
