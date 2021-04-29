@@ -20,7 +20,7 @@
     <div class="col-md-6 mx-auto mb-5">
       <header class="header">
           <div class="header__logo-box">
-              <a href="<?= URLROOT; ?>" class="header__link"><img src="<?= URLROOT; ?>/images/logo/title(412).png" alt="Uruk Hard Play Hard Logo" class="header__logo"></a>
+              <a href="<?= URLROOT; ?>" class="header__link"><img src="<?= LOGOFOLDER; ?>logo.jpg" alt="Uruk Hard Play Hard Logo" class="header__logo"></a>
           </div>
       </header>
     </div>

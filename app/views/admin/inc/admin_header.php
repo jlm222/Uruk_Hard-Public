@@ -1,5 +1,3 @@
-<?php // require "includes/admin_functions.php"; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

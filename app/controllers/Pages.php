@@ -8,11 +8,12 @@
 
         public function index(){
             // Get latest comic data
-            $comic = $this->comicModel->getComicIndexQuery();
+            $comic = $this->comicModel->getComicQuery('index');
+
             // Get nav data for navbar
             $navData = [
                'nav_first' => URLROOT . 'pages/first',
-               'nav_prev' => $this->navModel->comicPrevIdForIndexQuery(),
+               'nav_prev' => $this->navModel->getPrevIdForIndexComic(),
                'nav_next' => '',
                'nav_latest' => ''
             ];
@@ -24,11 +25,15 @@
         public function comic($post_id){
             // Get current comic data
             $comicCurrent = $this->comicModel->getComicQuery($post_id);
-            $comicFirst = $this->comicModel->getComicFirstQuery();
-            $comicLatest = $this->comicModel->getComicIndexQuery();
+            $comicFirst = $this->comicModel->getComicQuery('first');
+            $comicLatest = $this->comicModel->getComicQuery('index');
+
             // Redirects to first/index page if comic is first/latest
-            if($comicCurrent == $comicFirst) {redirect('pages/first');}
-            elseif($comicCurrent == $comicLatest) {redirect('');}     
+            if($comicCurrent['post_id'] === $comicFirst['post_id']) redirect('pages/first');
+            if($comicCurrent['post_id'] === $comicLatest['post_id']) redirect('');
+            
+          
+            if($post_id < $comicFirst['post_id'] || $post_id > $comicLatest['post_id']) redirect('pages/error');  
             
             // Get nav data for navbar
             $navData = [
@@ -44,12 +49,13 @@
 
         public function first(){
             // Get first comic
-            $comic = $this->comicModel->getComicFirstQuery();
+            $comic = $this->comicModel->getComicQuery('first');
+
             // Get nav data for navbar
             $navData = [
                 'nav_first' => '',
                 'nav_prev' => '',
-                'nav_next' => $this->navModel->comicNextIdForFirstQuery(),
+                'nav_next' => $this->navModel->getNextIdForFirstComic(),
                 'nav_latest' => URLROOT
             ];
             // Merge comic and nav data
@@ -71,6 +77,7 @@
             $comicData = [
                 'post_id' => $comic['post_id'], 
                 'post_image' => $comic['post_image'], 
+                'post_secret_image' => $comic['post_secret_image'], 
                 'post_alt_text' => $comic['post_alt_text'], 
                 'post_hover_text' => $comic['post_hover_text'], 
                 'post_title' => $comic['post_title'], 
@@ -83,5 +90,15 @@
         private function formatDate($post_date){
             $post_date = new DateTime($post_date);
             return $post_date = $post_date->format("F d, Y");
+        }
+
+        public function error(){
+            // Get nav data for navbar
+            $data = [
+               
+            ];
+            // Merge comic and nav data
+           
+            $this->view('pages/error', $data);
         }
 }

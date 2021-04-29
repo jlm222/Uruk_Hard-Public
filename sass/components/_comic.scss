@@ -1,0 +1,49 @@
+.comic {
+    grid-row: 3;
+    grid-column: center-start / center-end;
+
+    &__container {
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &__under {
+        display: grid;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: repeat(2, 1fr) minmax(1rem, 1fr);
+
+        align-items: center;
+        padding-top: 4rem;
+
+        @include respond(tab-port) {
+            // grid-row: 2; // width < 900?
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__info {
+        margin-bottom: 10rem;
+        margin-left: 22%;
+
+        @include respond(tab-land) {
+        }
+
+        @include respond(tab-port) {
+            // grid-row: 1; // width < 900?
+            // grid-column: 2;
+            margin-left: 20%;
+            // margin-bottom: 10rem;
+        }
+
+        @include respond(tab-land) {
+        }
+    }
+
+    &__date {
+        white-space: nowrap;
+    }
+}

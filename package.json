@@ -4,10 +4,10 @@
     "description": "Uruk Hard Website",
     "main": "index.js",
     "scripts": {
-        "start": "sass sass/main.scss css/style.css --watch",
-        "compile:sass": "sass sass/main.scss css/style.comp.css",
-        "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
-        "compress:css": "sass --style=compressed css/style.prefix.css css/style.css",
+        "start": "sass sass/main.scss public/css/style.css --watch",
+        "compile:sass": "sass sass/main.scss public/css/style.comp.css",
+        "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/css/style.comp.css -o public/css/style.prefix.css",
+        "compress:css": "sass --style=compressed public/css/style.prefix.css public/css/style.css",
         "build:css": "npm-run-all compile:sass prefix:css compress:css"
     },
     "repository": {

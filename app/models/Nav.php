@@ -33,13 +33,13 @@
         }  
 
         // Next comic nav for first comic page
-        public function comicNextIdForFirstQuery() {
+        public function getNextIdForFirstComic() {
             $this->db->query($this->commonNavQuery . " LIMIT 1,1");
             return $this->db->fetchColumn();
         }
 
         // Previous comic nav for index page 
-        public function comicPrevIdForIndexQuery() {            
+        public function getPrevIdForIndexComic() {            
             $this->db->query($this->commonNavQuery . " DESC LIMIT 1,1");
             return $this->db->fetchColumn();
         }

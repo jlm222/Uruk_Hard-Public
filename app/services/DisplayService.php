@@ -11,7 +11,7 @@
                 $comicArr = $this->displayLogic($post_date, $row);
                 // Use loop counter to insert $comicArr into $data array
                 // This is because it's quicker computationally than array_push
-                $this->data[$this->loopCounter] = $comicArr;
+                $this->data['comic_data'][$this->loopCounter] = $comicArr;
                 $this->loopCounter++;
             }
             return $this->data;
@@ -34,18 +34,18 @@
         public function displayLogic($post_date, $row){
             // Change name to get thumbnail
             $post_image = substr_replace($row['post_image'], "_thumb.jpg", -4);
-            // Link to comic
-            $comicLink = URLROOT . "/pages/comic/{$row['post_id']}";
+            $post_secret_image = substr_replace($row['post_image'], "_thumb.jpg", -4);
 
             return [ 
                 'post_id' => $row['post_id'],
                 'post_title' => $row['post_title'],
                 'post_image' => $post_image,
+                'post_secret_image' => $post_secret_image,
                 'post_date' => $post_date,
                 'post_status' => $row['post_status'],
                 'post_alt_text' => $row['post_alt_text'],
                 'post_hover_text' => $row['post_hover_text'],
-                'post_link' => $comicLink
+                'post_link' => URLROOT . "/pages/comic/{$row['post_id']}"
             ];
         }
 

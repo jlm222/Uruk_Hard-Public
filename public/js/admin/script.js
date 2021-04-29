@@ -1,4 +1,4 @@
-const URLROOT = 'http://localhost/uruk_mvc';
+const URLROOT = 'http://localhost/Uruk_Hard-Public';
 
 //// Check All Checkboxes
 $(function () {

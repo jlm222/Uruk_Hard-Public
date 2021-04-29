@@ -8,6 +8,9 @@
     // App Root
     define('APPROOT', (dirname(__FILE__, 2)));
     // URL Root
-    define('URLROOT', 'http://localhost/uruk_mvc');
+    define('URLROOT', 'http://localhost/Uruk_Hard-Public');
     // Site Name
     define('SITENAME', 'Uruk Hard, Play Hard');
+    define('COMICFOLDER', URLROOT . "/images/comics/");
+    define('LOGOFOLDER', URLROOT . "/images/logo/");
+    define('ICONFOLDER', URLROOT . "/images/icons/");

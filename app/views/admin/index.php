@@ -27,6 +27,7 @@
       <th scope="col" onclick="sortTableNum(1, 'post-table')" class="thArrow1 cursor" width="4%">#</th>
       <th scope="col" onclick="sortTable(2, 'post-table')" class="thArrow2 cursor" width="15%">Title</th>
       <th scope="col">Image</th>
+      <th scope="col">Secret</th>
       <th scope="col" onclick="sortTableNum(4, 'post-table')" class="thArrow3 cursor">Date&nbsp;(Y/M/D)</th>
       <th scope="col" onclick="sortTable(5, 'post-table')" class="thArrow4 cursor" width="8%">Status</th>
       <th scope="col" width="1%">Publish</th>
@@ -45,6 +46,7 @@
       <td scope="row" class="fw-bolder"><?= $row['post_id']; ?></th>
       <td class="fs-5"><?= $row['post_title']; ?></td>
       <td><img width="auto" height="90rem" src="<?= URLROOT; ?>/images/comics/<?= $row['post_id']; ?>/<?= $row['post_image']; ?>" alt=""></td>
+      <td><img width="auto" height="90rem" src="<?= URLROOT; ?>/images/comics/<?= $row['post_id']; ?>/<?= $row['post_secret_image']; ?>" alt=""></td>
       <td class="fs-5"><?= $row['post_date']; ?></td>
       <td><?= $row['post_status']; ?></td>
       <td><form action="<?= URLROOT; ?>/posts/post" method="POST"><input type="hidden" name="id" value="<?= $row['post_id'] ;?>"><input class="btn btn-outline-dark mx-2" type="submit" name="published" value="Publish"></form></td> 

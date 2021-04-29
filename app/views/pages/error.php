@@ -19,10 +19,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>Page does not exist</h1>
+                        <h1>Oops, this page doesn't exist!</h1>
                     </div>
                     <div class="alert alert-danger fade in">
-                        <p>Sorry, this page doesn't exist. Click <a href="<?= URLROOT; ?>" class="alert-link">here</a> to head back to the front page.</p>
+                        <p>Sorry, this page doesn't exist. Please click <a href="<?= URLROOT; ?>" class="alert-link">here</a> to head back to the front page.</p>
                     </div>
                 </div>
             </div>        

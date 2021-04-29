@@ -18,6 +18,7 @@
         public function index(){
             $this->displayArchive();
             $this->page;
+            $this->data['archive_header'] = true;
             $this->view('pages/archive', $this->data);
         }
 
