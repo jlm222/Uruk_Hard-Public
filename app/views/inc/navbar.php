@@ -2,7 +2,7 @@
     <ul class="nav__list">
 
         <?php if($data['nav_prev'] !== '') : ?>
-        <li class="nav__item  nav__item--hand1 <?php $data['nav_prev'] !== '' ? '' : 'nav__item--disabled' ; ?>">
+        <li class="nav__item nav__item--hand nav__item--hand1 <?php $data['nav_prev'] !== '' ? '' : 'nav__item--disabled' ; ?>">
             <a href="<?= URLROOT; ?>/pages/first">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>first.webp">
@@ -12,7 +12,7 @@
                 <span class="nav__link">First</span> 
             </a>
         </li> 
-        <li class="nav__item  nav__item--arrow1">
+        <li class="nav__item nav__item--arrow nav__item--arrow1">
             <a href="<?= $data['nav_prev'] == $data['nav_first'] ? URLROOT . '/pages/first' : URLROOT . '/pages/comic/' . $data['nav_prev']; ?>"  class="nav__link">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>prev.webp">
@@ -23,7 +23,7 @@
             </a>
         </li>
         <?php else : ?>
-        <li class="nav__item nav__item--disabled nav__item--hand1">
+        <li class="nav__item nav__item--disabled nav__item--hand nav__item--hand1">
             <p class="nav__link">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>first.webp">
@@ -33,7 +33,7 @@
                 First
             </p>
         </li> 
-        <li class="nav__item nav__item--disabled nav__item--arrow1">
+        <li class="nav__item nav__item--disabled nav__item--arrow nav__item--arrow1">
             <p class="nav__link">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>prev.webp">
@@ -59,7 +59,7 @@
 
         
         <?php if($data['nav_latest'] !== '') : ?>
-        <li class="nav__item nav__item--arrow2">
+        <li class="nav__item nav__item--arrow nav__item--arrow2">
             <a href="<?= $data['nav_next'] == $data['nav_latest'] ? URLROOT : URLROOT . '/pages/comic/' . $data['nav_next']; ?>" class="nav__link">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>next.webp">
@@ -69,7 +69,7 @@
                 Next
             </a>
         </li>
-        <li class="nav__item  nav__item--hand2">
+        <li class="nav__item nav__item--hand nav__item--hand2">
             <a href="<?= URLROOT; ?>" class="nav__link">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>last.webp">
@@ -80,7 +80,7 @@
             </a>
         </li>
         <?php else : ?>
-        <li class="nav__item nav__item--disabled nav__item--arrow2">
+        <li class="nav__item nav__item--disabled nav__item--arrow nav__item--arrow2">
             <p class="nav__link">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>next.webp">
@@ -90,7 +90,7 @@
                 Next
             </p>
         </li>
-        <li class="nav__item nav__item--disabled nav__item--hand2">
+        <li class="nav__item nav__item--disabled nav__item--hand nav__item--hand2">
             <p class="nav__link">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>last.webp">

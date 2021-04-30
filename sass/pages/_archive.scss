@@ -1,14 +1,28 @@
 .archive {
-    grid-column: center-start / center-end;
-    grid-row: 2;
-
+    display: flex;
+    flex-direction: column;
     text-align: start;
 
     &__list {
-        list-style: none;
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-evenly;
+        width: 68vw;
+        flex-wrap: wrap;
+        list-style: none;
+
+        @include respond(tab-land) {
+            width: 79vw;
+        }
+
+        @include respond(tab-port) {
+            width: 85vw;
+        }
+        @include respond(phone) {
+            width: 92vw;
+        }
+        @include respond(phone-sm) {
+            width: 95vw;
+        }
     }
 
     &__item {
@@ -17,8 +31,6 @@
 
         margin: 1.8rem;
         margin-bottom: 6rem;
-    }
-    &__link {
     }
 
     &__titles {
@@ -39,11 +51,9 @@
         margin-top: 0.4rem;
 
         @include respond(phone) {
-            height: 94%;
         }
 
         @include respond(phone-sm) {
-            height: 90%;
         }
     }
 }

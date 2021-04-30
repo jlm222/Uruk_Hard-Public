@@ -1,87 +1,97 @@
 .nav {
-    grid-row: 2;
-    grid-column: center-start / center-end;
-
-    margin-bottom: 2rem;
+    margin: 2rem 0;
+    width: 100%;
 
     &__list {
-        display: grid;
-        grid-template-columns: repeat(5, [col-start] min-content [col-end]);
-        grid-template-rows: repeat(2, min-content);
+        display: flex;
+        width: 60%;
+        margin: 0 auto;
 
         list-style: none;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
         justify-items: center;
         align-items: flex-end;
-    }
-
-    &__item {
-        margin: 0 2.4rem;
-        text-align: center;
-        cursor: pointer;
-        overflow: visible;
 
         @include respond(tab-land) {
-            margin: 0 2.6rem; // width < 1200?
+            width: 80%; // width < 600?
         }
-
         @include respond(tab-port) {
-            margin: 0 3rem; // width < 900?
+            width: 92%; // width < 600?
         }
 
         @include respond(phone) {
-            margin: 0 2.4rem; // width < 600?
+            width: 100%; // width < 600?
+        }
+    }
+
+    &__item {
+        // margin: 0 2.4rem;
+        text-align: center;
+        cursor: pointer;
+        overflow: visible;
+        display: flex;
+        justify-content: center;
+
+        @include respond(tab-land) {
+            // margin: 0 2.6rem; // width < 1200?
+        }
+
+        @include respond(tab-port) {
+            // width < 900?
+        }
+
+        @include respond(phone) {
+            // margin: 0 2.4rem; // width < 600?
         }
 
         @include respond(phone-sm) {
-            margin: 0 2.2rem; // width < 400?
+            // margin: 0 2.2rem; // width < 400?
         }
 
         &--hand {
+            @include respond(phone) {
+                width: 33.3333%; // width < 600?
+            }
+
             &1 {
-                @include respond(tab-port) {
-                    grid-row: 1; // width < 900?
-                    grid-column: 1;
+                @include respond(phone) {
+                    margin-left: 8%; // width < 600?
                 }
             }
 
             &2 {
-                @include respond(tab-port) {
-                    grid-row: 1; // width < 900?
-                    grid-column: 3;
+                @include respond(phone) {
+                    margin-right: 8%; // width < 600?
                 }
             }
         }
         &--arrow {
+            @include respond(phone) {
+                margin-top: 2rem; // width < 600?
+            }
+
             &1 {
-                @include respond(tab-port) {
-                    grid-row: 2; // width < 900?
-                    grid-column: 1;
+                @include respond(phone) {
+                    order: 4;
+                    margin-right: 7%;
+                    // width < 600?
                 }
             }
 
             &2 {
-                @include respond(tab-port) {
-                    grid-row: 2; // width < 900?
-                    grid-column: 3;
-                }
-            }
+                @include respond(phone) {
+                    order: 5;
 
-            @include respond(tab-port) {
-                grid-row: 2; // width < 900?
-                grid-column: 2;
+                    // width < 600?
+                }
             }
         }
 
         &--scroll {
-            @include respond(tab-port) {
-                grid-row: 1; // width < 900?
-                grid-column: col-start 2 / col-start 3; // width < 900?
+            @include respond(phone) {
+                // width < 600?
             }
-        }
-
-        &:hover img {
         }
 
         &--disabled {
@@ -111,7 +121,7 @@
     }
 
     @include respond(phone) {
-        height: 4.8rem; // width < 600?
+        height: 5rem; // width < 600?
     }
 
     @include respond(phone-sm) {
@@ -151,7 +161,7 @@
     }
 
     @include respond(phone) {
-        height: 5.4rem; // width < 600?
+        height: 5.6rem; // width < 600?
     }
 
     @include respond(phone-sm) {

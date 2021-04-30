@@ -1,28 +1,25 @@
 .header {
-    grid-column: center-start / center-end;
-    grid-row: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 2rem;
 
     &__logo-box {
-        margin-left: 9.1%;
-        padding-top: 2rem;
-
+        margin-right: 21.3%;
         @include respond(tab-port) {
             // width < 900?
-            margin-left: 10%; // 1rem = 8px; 8/16 = 50%
+            margin-right: 28%; // 1rem = 8px; 8/16 = 50%
         }
 
         @include respond(phone) {
             // width < 600?
-            margin-left: 6%; // 1rem = 7px; 7/16 = 43.75%
+            margin-right: 28%; // 1rem = 7px; 7/16 = 43.75%
         }
 
         @include respond(phone-sm) {
             // width < 600?
-            margin-left: 4%; // 1rem = 7px; 7/16 = 43.75%
+            margin-right: 28%; // 1rem = 7px; 7/16 = 43.75%
         }
-    }
-
-    &__link {
     }
 
     &__logo {
@@ -34,7 +31,7 @@
         }
 
         @include respond(phone-sm) {
-            height: 17rem; // width < 600?
+            height: 17rem; // width < 400?
         }
     }
 }
