@@ -13,6 +13,11 @@ html {
     font-size: 62.5%; //1 rem = 10px; 10px/16 = 62.5%
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+    @include respond(laptop) {
+        // width < 1200?
+        // 1rem = 9px; 9/16 = 56.25%
+    }
+
     @include respond(tab-land) {
         // width < 1200?
         font-size: 56.25%; // 1rem = 9px; 9/16 = 56.25%
@@ -51,44 +56,24 @@ a:active {
 .container {
     display: flex;
     flex-direction: column;
-
     align-items: center;
 
     @include respond(tab-land) {
         // width < 1200?
-        grid-template-columns:
-            [full-start] 1fr [center-start] minmax(5rem, 70vw)
-            [center-end] 1fr [full-end]; // 1rem = 8px; 8/16 = 50%
     }
 
     @include respond(tab-port) {
         // width < 900?
-        grid-template-columns:
-            [full-start] 1fr [center-start] minmax(5rem, 78vw)
-            [center-end] 1fr
-            [full-end]; // 1rem = 8px; 8/16 = 50% // 1rem = 8px; 8/16 = 50%
     }
 
     @include respond(phone) {
         // width < 600?
-        grid-template-columns:
-            [full-start] minmax(1rem, 1fr) [center-start] minmax(5rem, 90vw)
-            [center-end] minmax(1rem, 1fr)
-            [full-end]; // 1rem = 8px; 8/16 = 50% // 1rem = 8px; 8/16 = 50%
     }
 
     @include respond(phone-sm) {
         // width < 400?
-        grid-template-columns:
-            [full-start] minmax(0rem, 1fr) [center-start] minmax(5rem, 92vw)
-            [center-end] minmax(0rem, 1fr)
-            [full-end]; // 1rem = 8px; 8/16 = 50% // 1rem = 8px; 8/16 = 50%
     }
 
     @include respond(big-desktop) {
-        grid-template-columns:          // 1rem = 12px; 12/16 = 75%
-
-            [full-start] minmax(2rem, 1fr) [center-start] minmax(5rem, 52vw)
-            [center-end] minmax(2rem, 1fr) [full-end];
     }
 }

@@ -13,6 +13,11 @@
         justify-items: center;
         align-items: flex-end;
 
+        // IE 10/11 fix
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            justify-content: center;
+        }
+
         @include respond(tab-land) {
             width: 80%; // width < 600?
         }
@@ -125,7 +130,7 @@
     }
 
     @include respond(phone-sm) {
-        height: 4rem; // width < 400?
+        height: 5.4rem; // width < 400?
     }
 }
 
@@ -145,7 +150,7 @@
     }
 
     @include respond(phone-sm) {
-        height: 2.4rem; // width < 400?
+        height: 3rem; // width < 400?
     }
 }
 
@@ -165,6 +170,6 @@
     }
 
     @include respond(phone-sm) {
-        height: 4.8rem; // width < 400?
+        height: 6rem; // width < 400?
     }
 }

@@ -1,7 +1,10 @@
 .comic {
     width: 52vw;
-    height: auto;
+    height: 100%;
 
+    @include respond(laptop) {
+        width: 62vw;
+    }
     @include respond(tab-land) {
         width: 72vw;
     }
@@ -28,19 +31,25 @@
 
     &__info {
         margin-left: 10%;
+        margin-bottom: 9rem;
         align-self: flex-start;
 
         @include respond(tab-land) {
         }
 
         @include respond(tab-port) {
-            // grid-row: 1; // width < 900?
-            // grid-column: 2;
-
-            // margin-bottom: 10rem;
+            margin-bottom: 12rem;
         }
 
-        @include respond(tab-land) {
+        @include respond(phone) {
+            margin-top: 6%;
+            margin-bottom: 20rem;
+            margin-left: 4%;
+        }
+
+        @include respond(phone-sm) {
+            margin-left: 4%;
+            margin-bottom: 24rem;
         }
     }
 

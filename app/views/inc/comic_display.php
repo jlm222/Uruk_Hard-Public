@@ -5,7 +5,7 @@
         <div class="comic__under">
             <div class="comic__info">
                 <h1 class="comic__title"><?= $data['post_title']; ?></h1>
-                <h2 class="comic__date">on <?= $data['post_date']; ?></h2>
+                <h2 class="comic__date">&nbsp;&nbsp;on <?= $data['post_date']; ?></h2>
             </div>
         </div>        
         <div class="secret">
