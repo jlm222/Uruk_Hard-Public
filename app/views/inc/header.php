@@ -14,7 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Custom CSS -->
     <link href="<?= URLROOT; ?>/css/style.css" rel="stylesheet">
-    <script defer src="<?= URLROOT; ?>/js/main.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <!-- Favicon and Manifest -->
@@ -22,6 +21,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="<?= URLROOT; ?>/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= URLROOT; ?>/favicon-16x16.png"> 
     <link rel="manifest" href="<?= URLROOT; ?>/site.webmanifest">
+    <!-- Javascript -->
+    <script defer src="<?= URLROOT; ?>/js/main.js"></script>
 </head>
 
 <body class="container">
@@ -31,7 +32,7 @@
                 <picture>
                     <source type="image/webp" srcset="<?= LOGOFOLDER; ?>logo.webp">
                     <source type="image/jpeg" srcset="<?= LOGOFOLDER; ?>logo.jpg">
-                    <img src="<?= LOGOFOLDER; ?>logo.jpg" class="header__logo" alt="Uruk Hard Play Hard Logo">
+                    <img src="<?= LOGOFOLDER; ?>logo.jpg" class="header__logo" alt="Uruk Hard Play Hard Logo" width="416" height="255">
                 </picture>
             </a>
         </div>

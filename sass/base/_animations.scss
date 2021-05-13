@@ -44,7 +44,16 @@
 
 @keyframes opac {
     0% {
-        opacity: 0;
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes opac2 {
+    0% {
+        opacity: 0.6;
     }
 
     100% {

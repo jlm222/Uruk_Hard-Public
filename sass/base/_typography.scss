@@ -12,6 +12,7 @@ body {
         text-transform: uppercase;
         text-decoration: none;
         color: $color-black;
+        letter-spacing: -0.2px;
     }
 }
 
@@ -42,11 +43,9 @@ body {
         text-transform: uppercase;
         text-decoration: none;
         font-weight: 400;
-        transition: font-weight 0.1s linear;
 
         &:hover {
             color: $color-aqua-bright;
-            font-weight: 600;
         }
     }
 }

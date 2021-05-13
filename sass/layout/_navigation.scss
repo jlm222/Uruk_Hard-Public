@@ -30,6 +30,23 @@
         }
     }
 
+    &__link {
+        position: relative;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            width: 0px;
+            height: 1px;
+            margin: 5px 0 0;
+            transition-duration: 0.21s;
+            opacity: 0.5;
+            background-color: darken(#171717, 5%);
+        }
+    }
+
     &__item {
         // margin: 0 2.4rem;
         text-align: center;
@@ -37,6 +54,30 @@
         overflow: visible;
         display: flex;
         justify-content: center;
+        position: relative;
+
+        & a {
+            position: relative;
+        }
+
+        &:hover {
+            & a span.nav__link {
+                &:before,
+                &:after {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.nav__item--scroll {
+            &:hover a span.nav__link {
+                &:before,
+                &:after {
+                    width: 50%;
+                }
+            }
+        }
 
         @include respond(tab-land) {
             // margin: 0 2.6rem; // width < 1200?
@@ -60,12 +101,24 @@
             }
 
             &1 {
+                & a span.nav__link {
+                    &:before,
+                    &:after {
+                        right: 1px;
+                    }
+                }
                 @include respond(phone) {
                     margin-left: 8%; // width < 600?
                 }
             }
 
             &2 {
+                & a span.nav__link {
+                    &:before,
+                    &:after {
+                        left: 0;
+                    }
+                }
                 @include respond(phone) {
                     margin-right: 8%; // width < 600?
                 }
@@ -77,6 +130,13 @@
             }
 
             &1 {
+                & a span.nav__link {
+                    &:before,
+                    &:after {
+                        right: 0;
+                    }
+                }
+
                 @include respond(phone) {
                     order: 4;
                     margin-right: 7%;
@@ -85,6 +145,12 @@
             }
 
             &2 {
+                & a span.nav__link {
+                    &:before,
+                    &:after {
+                        left: 0;
+                    }
+                }
                 @include respond(phone) {
                     order: 5;
 
@@ -94,6 +160,14 @@
         }
 
         &--scroll {
+            & a span.nav__link {
+                &:before {
+                    left: 50%;
+                }
+                &:after {
+                    right: 50%;
+                }
+            }
             @include respond(phone) {
                 // width < 600?
             }
@@ -109,7 +183,6 @@
         display: block;
         width: auto;
         margin-bottom: 1rem;
-        transition: all 0.2s ease-out 0.04s;
         backface-visibility: hidden;
     }
 }

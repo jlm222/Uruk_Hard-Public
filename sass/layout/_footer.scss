@@ -7,8 +7,6 @@
     margin: 3rem 0;
     padding: 1rem 0;
 
-    transition: all 0.1s ease-out 0.02s;
-
     &__list {
         list-style: none;
     }
@@ -20,9 +18,36 @@
 
     &__link {
         border-radius: 4px;
-        box-shadow: 0px 1px 4px rgba(165, 165, 165, 0.3);
+        position: relative;
         padding: 1rem;
-        transition: all 0.1s;
+        transition: transform 0.2s ease-in, color 0.2s ease-out;
+        border: none;
+        background: white;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            outline: solid 1px rgb(241, 241, 241);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            outline: solid 1px;
+            transition: opacity 0.18s ease-in 0.03s;
+        }
 
         &--patreon {
             padding: 1rem 1.5rem;
@@ -30,7 +55,10 @@
 
         &:hover,
         &:active {
-            box-shadow: 1px 3px 10px rgba(165, 165, 165, 0.2);
+            transform: scale(1.03);
+            &::after {
+                opacity: 1;
+            }
             // background-color: $color-aqua-bright;
             // color: white;
         }

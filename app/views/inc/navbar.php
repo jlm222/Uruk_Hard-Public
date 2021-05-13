@@ -7,19 +7,19 @@
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>first.webp">
                     <source type="image/jpeg" srcset="<?= ICONFOLDER; ?>first.jpg">
-                    <img src="<?= ICONFOLDER; ?>first.jpg" class="nav__img hand-icon" alt="Link to First Comic">
+                    <img src="<?= ICONFOLDER; ?>first.jpg" class="nav__img hand-icon" alt="Link to First Comic" width="98" height="55">
                 </picture>
                 <span class="nav__link">First</span> 
             </a>
         </li> 
         <li class="nav__item nav__item--arrow nav__item--arrow1">
-            <a href="<?= $data['nav_prev'] == $data['nav_first'] ? URLROOT . '/pages/first' : URLROOT . '/pages/comic/' . $data['nav_prev']; ?>"  class="nav__link">
+            <a href="<?= $data['nav_prev'] == $data['nav_first'] ? URLROOT . '/pages/first' : URLROOT . '/pages/comic/' . $data['nav_prev']; ?>">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>prev.webp">
                     <source type="image/jpeg" srcset="<?= ICONFOLDER; ?>prev.jpg">
-                    <img src="<?= ICONFOLDER; ?>prev.jpg" class="nav__img arrow-icon" alt="Link to Previous Comic" width="232" height="36">
+                    <img src="<?= ICONFOLDER; ?>prev.jpg" class="nav__img arrow-icon" alt="Link to Previous Comic" width="238" height="37">
                 </picture>
-                Back
+                <span class="nav__link">Back</span> 
             </a>
         </li>
         <?php else : ?>
@@ -28,7 +28,7 @@
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>first.webp">
                     <source type="image/jpeg" srcset="<?= ICONFOLDER; ?>first.jpg">
-                    <img src="<?= ICONFOLDER; ?>first.jpg" class="nav__img hand-icon" alt="Disabled Link to First Comic">
+                    <img src="<?= ICONFOLDER; ?>first.jpg" class="nav__img hand-icon" alt="Disabled Link to First Comic" width="98" height="55">
                 </picture>
                 First
             </p>
@@ -38,7 +38,7 @@
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>prev.webp">
                     <source type="image/jpeg" srcset="<?= ICONFOLDER; ?>prev.jpg">
-                    <img src="<?= ICONFOLDER; ?>prev.jpg" class="nav__img arrow-icon" alt="Disabled Link to Previous Comic">
+                    <img src="<?= ICONFOLDER; ?>prev.jpg" class="nav__img arrow-icon" alt="Disabled Link to Previous Comic" width="238" height="37">
                 </picture>
                 Back
             </p>
@@ -47,36 +47,36 @@
 
 
         <li class="nav__item nav__item--scroll">
-            <a href="<?= URLROOT; ?>/archives" class="nav__link">
+            <a href="<?= URLROOT; ?>/archives">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>archive.webp">
                     <source type="image/jpeg" srcset="<?= ICONFOLDER; ?>archive.jpg">
-                    <img src="<?= ICONFOLDER; ?>archive.jpg" class="nav__img archive-icon" alt="Link to Archive">
+                    <img src="<?= ICONFOLDER; ?>archive.jpg" class="nav__img archive-icon" alt="Link to Archive" width="79" height="70">
                 </picture>
-                Archive
+                <span class="nav__link">Archive</span>
             </a>
         </li>
 
         
         <?php if($data['nav_latest'] !== '') : ?>
         <li class="nav__item nav__item--arrow nav__item--arrow2">
-            <a href="<?= $data['nav_next'] == $data['nav_latest'] ? URLROOT : URLROOT . '/pages/comic/' . $data['nav_next']; ?>" class="nav__link">
+            <a href="<?= $data['nav_next'] == $data['nav_latest'] ? URLROOT : URLROOT . '/pages/comic/' . $data['nav_next']; ?>">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>next.webp">
                     <source type="image/jpeg" srcset="<?= ICONFOLDER; ?>next.jpg">
-                    <img src="<?= ICONFOLDER; ?>next.jpg" class="nav__img arrow-icon" alt="Link to Next Comic">
+                    <img src="<?= ICONFOLDER; ?>next.jpg" class="nav__img arrow-icon" alt="Link to Next Comic" width="238" height="37">
                 </picture>
-                Next
+                <span class="nav__link">Next</span>
             </a>
         </li>
         <li class="nav__item nav__item--hand nav__item--hand2">
-            <a href="<?= URLROOT; ?>" class="nav__link">
+            <a href="<?= URLROOT; ?>">
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>last.webp">
                     <source type="image/jpeg" srcset="<?= ICONFOLDER; ?>last.jpg">
-                    <img src="<?= ICONFOLDER; ?>last.jpg" class="nav__img hand-icon" alt="Link to Latest Comic">
+                    <img src="<?= ICONFOLDER; ?>last.jpg" class="nav__img hand-icon" alt="Link to Latest Comic" width="98" height="55">
                 </picture>
-                Latest
+                <span class="nav__link">Latest</span>
             </a>
         </li>
         <?php else : ?>
@@ -85,7 +85,7 @@
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>next.webp">
                     <source type="image/jpeg" srcset="<?= ICONFOLDER; ?>next.jpg">
-                    <img src="<?= ICONFOLDER; ?>next.jpg" class="nav__img arrow-icon" alt="Disabled Link to Next Comic">
+                    <img src="<?= ICONFOLDER; ?>next.jpg" class="nav__img arrow-icon" alt="Disabled Link to Next Comic" width="238" height="37">
                 </picture>
                 Next
             </p>
@@ -95,7 +95,7 @@
                 <picture>
                     <source type="image/webp" srcset="<?= ICONFOLDER; ?>last.webp">
                     <source type="image/jpeg" srcset="<?= ICONFOLDER; ?>last.jpg">
-                    <img src="<?= ICONFOLDER; ?>last.jpg" class="nav__img hand-icon" alt="Disabled Link to Latest Comic">
+                    <img src="<?= ICONFOLDER; ?>last.jpg" class="nav__img hand-icon" alt="Disabled Link to Latest Comic" width="98" height="55">
                 </picture>
                 Latest
             </p>
