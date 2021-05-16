@@ -8,10 +8,10 @@ const secretContainer = document.querySelector('.secret__panel-container');
 const secret = document.querySelector('.secret');
 
 // Add pointer if secret panel exists
-const cursor = function () {
+const addCursor = function () {
     if (secretPanel) durin.classList.add('cursor');
 };
-cursor();
+addCursor();
 
 // Reveal Secret Panel
 durin.addEventListener('click', function (e) {
@@ -20,6 +20,24 @@ durin.addEventListener('click', function (e) {
     durin.classList.toggle('durin-light');
     secretContainer.classList.toggle('hidden');
 });
+
+// Intersection Observer / Reveal items
+durinContainer.classList.add('hidden__observer');
+
+const revealSection = (entries, observer) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.remove('hidden__observer');
+        observer.unobserve(entry.target);
+    });
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+});
+
+sectionObserver.observe(durinContainer);
 
 // IE object-fit fix
 function objectFit(image) {
@@ -42,21 +60,3 @@ function objectFit(image) {
 }
 
 objectFit(secretPanel);
-
-// Intersection Observer / Reveal items
-
-const revealSection = (entries, observer) => {
-    entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.remove('hidden__observer');
-        observer.unobserve(entry.target);
-    });
-};
-
-const sectionObserver = new IntersectionObserver(revealSection, {
-    root: null,
-    threshold: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-});
-
-sectionObserver.observe(durinContainer);
-durinContainer.classList.add('hidden__observer');

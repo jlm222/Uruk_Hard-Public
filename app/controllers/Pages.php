@@ -7,23 +7,25 @@
         }
 
         public function index(){
-            // Get latest comic data
+            // Gets latest comic data
             $comic = $this->comicModel->getComicQuery('index');
 
-            // Get nav data for navbar
+            // Gets nav data for navbar
             $navData = [
                'nav_first' => URLROOT . 'pages/first',
                'nav_prev' => $this->navModel->getPrevIdForIndexComic(),
                'nav_next' => '',
                'nav_latest' => ''
             ];
-            // Merge comic and nav data
-            $data = $this->mergeData($comic, $navData);
+            $comicData = $this->setComicData($comic);
+
+            // Merges comic and nav data
+            $data = array_merge($comicData, $navData);
             $this->view('pages/index', $data);
         }
 
         public function comic($post_id){
-            // Get current comic data
+            // Gets current comic data
             $comicCurrent = $this->comicModel->getComicQuery($post_id);
             $comicFirst = $this->comicModel->getComicQuery('first');
             $comicLatest = $this->comicModel->getComicQuery('index');
@@ -32,39 +34,42 @@
             if($comicCurrent['post_id'] === $comicFirst['post_id']) redirect('pages/first');
             if($comicCurrent['post_id'] === $comicLatest['post_id']) redirect('');
             
-          
             if($post_id < $comicFirst['post_id'] || $post_id > $comicLatest['post_id']) redirect('pages/error');  
             
-            // Get nav data for navbar
+            // Gets nav data for navbar
             $navData = [
                 'nav_first' => URLROOT . 'pages/first',
                 'nav_prev' => $this->navModel->comicPrevQuery($post_id),
                 'nav_next' => $this->navModel->comicNextQuery($post_id),
                 'nav_latest' => URLROOT
             ];
-            // Merge comic and nav data
-            $data = $this->mergeData($comicCurrent, $navData);
+            $comicData = $this->setComicData($comicCurrent);
+
+            // Merges comic and nav data
+            $data = array_merge($comicData, $navData);
             $this->view('pages/comic', $data);
         }
 
         public function first(){
-            // Get first comic
+            // Gets first comic
             $comic = $this->comicModel->getComicQuery('first');
 
-            // Get nav data for navbar
+            // Gets nav data for navbar
             $navData = [
                 'nav_first' => '',
                 'nav_prev' => '',
                 'nav_next' => $this->navModel->getNextIdForFirstComic(),
                 'nav_latest' => URLROOT
             ];
-            // Merge comic and nav data
-            $data = $this->mergeData($comic, $navData);
+            $comicData = $this->setComicData($comic);
+
+            // Merges comic and nav data
+            $data = array_merge($comicData, $navData);
             $this->view('pages/first', $data);
         }
 
         public function login(){
-            // Init required variables as empty
+            // Initialises required variables as empty
             $data = [
                 'username' => '',
                 'password' => ''
@@ -72,9 +77,9 @@
             $this->view('admin/login', $data);
         }
 
-        // Sets Comic Display Data and merges with Nav Data
-        private function mergeData($comic, $navData){
-            $comicData = [
+        // Sets Comic Display Data
+        private function setComicData($comic){
+            return [
                 'post_id' => $comic['post_id'], 
                 'post_image' => $comic['post_image'], 
                 'post_secret_image' => $comic['post_secret_image'], 
@@ -82,8 +87,11 @@
                 'post_hover_text' => $comic['post_hover_text'], 
                 'post_title' => $comic['post_title'], 
                 'post_date' => $this->formatDate($comic['post_date']),
+                'jpg_link' => COMICFOLDER . "{$comic['post_id']}/{$comic['post_image']}",
+                'webp_link' => COMICFOLDER . "{$comic['post_id']}/" . substr_replace($comic['post_image'], 'webp', strpos($comic['post_image'], '.') + 1),
+                'jpg_secret_link' => COMICFOLDER . "{$comic['post_id']}/{$comic['post_secret_image']}",
+                'webp_secret_link' => COMICFOLDER . "{$comic['post_id']}/" . substr_replace($comic['post_secret_image'], 'webp', strpos($comic['post_secret_image'], '.') + 1),
             ];
-            return array_merge($comicData, $navData);
         }
 
         // Reformats Date for display
@@ -93,12 +101,6 @@
         }
 
         public function error(){
-            // Get nav data for navbar
-            $data = [
-               
-            ];
-            // Merge comic and nav data
-           
-            $this->view('pages/error', $data);
+            $this->view('pages/error');
         }
 }

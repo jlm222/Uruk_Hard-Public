@@ -1,6 +1,4 @@
 .pager {
-    grid-row: 3;
-    grid-column: center-start / center-end;
     list-style: none;
 
     margin: 1.2rem 0;
@@ -15,7 +13,8 @@
             color: black;
             padding: 1rem 2rem;
             margin: 0 0.6rem;
-            transition: all 0.09s ease-out;
+            transition: background-color 0.09s ease-out,
+                transform 0.09s ease-out, box-shadow 0.09s ease-out;
             border-radius: 1.2rem;
 
             &:hover {

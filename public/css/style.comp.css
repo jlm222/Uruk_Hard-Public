@@ -136,6 +136,7 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   color: #000;
+  letter-spacing: -0.2px;
 }
 
 .comic__title {
@@ -234,8 +235,6 @@ body {
 }
 
 .pager {
-  grid-row: 3;
-  grid-column: center-start/center-end;
   list-style: none;
   margin: 1.2rem 0;
   text-align: center;
@@ -249,7 +248,7 @@ body {
   color: black;
   padding: 1rem 2rem;
   margin: 0 0.6rem;
-  transition: all 0.09s ease-out;
+  transition: background-color 0.09s ease-out, transform 0.09s ease-out, box-shadow 0.09s ease-out;
   border-radius: 1.2rem;
 }
 .pager li > a:hover {
@@ -278,6 +277,7 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 @media only screen and (max-width: 37.5em) {
   .secret__img-container {
@@ -357,10 +357,11 @@ body {
 .hidden__observer {
   opacity: 0;
   transform: translateY(2rem);
+  transition: all 0s;
 }
 
 .section__observer {
-  transition: all 0.7s;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .cursor {
@@ -375,7 +376,6 @@ body {
 .social {
   margin: 3rem 0;
   padding: 1rem 0;
-  transition: all 0.1s ease-out 0.02s;
 }
 .social__list {
   list-style: none;
@@ -386,21 +386,43 @@ body {
 }
 .social__link {
   border-radius: 4px;
-  box-shadow: 0px 1px 4px 0px rgba(0, 185, 185, 0.1);
+  position: relative;
   padding: 1rem;
-  transition: box-shadow 0.2s, outline 0.2s linear 0.16s, transform 0.2s ease-in, color 0.3s;
+  transition: transform 0.1s ease-out, color 0.1s ease-out;
   border: none;
   background: white;
   cursor: pointer;
+}
+.social__link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
   outline: solid 1px #f1f1f1;
+}
+.social__link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  outline: solid 1px;
+  transition: opacity 0.18s ease-in 0.03s;
 }
 .social__link--patreon {
   padding: 1rem 1.5rem;
 }
 .social__link:hover, .social__link:active {
-  box-shadow: 1px 3px 9px -1px rgba(0, 236, 236, 0.15);
-  outline: solid 1px;
   transform: scale(1.03);
+}
+.social__link:hover::after, .social__link:active::after {
+  opacity: 1;
 }
 
 .copyright {
@@ -493,7 +515,7 @@ body {
   width: 0px;
   height: 1px;
   margin: 5px 0 0;
-  transition-duration: 0.2s;
+  transition-duration: 0.21s;
   opacity: 0.5;
   background-color: #0a0a0a;
 }
@@ -685,6 +707,9 @@ body {
   margin: 1.8rem;
   margin-bottom: 6rem;
 }
+.archive__item:hover .archive__img {
+  transform: scale(1.03);
+}
 .archive__titles {
   font-size: 1.2rem;
 }
@@ -698,6 +723,7 @@ body {
   display: block;
   margin: 0 auto;
   margin-top: 0.4rem;
+  transition: transform 0.18s ease-out;
 }
 /*!
  * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com

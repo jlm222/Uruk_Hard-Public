@@ -99,6 +99,22 @@ body {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
 }
 
+.form-label {
+    font-weight: bold;
+}
+
+.checkbox--styling {
+    transform: scale(1.5);
+}
+
+.not-bold {
+    font-weight: normal;
+}
+
+.text-center {
+    text-align: center;
+}
+
 .cursor {
     cursor: pointer;
 }

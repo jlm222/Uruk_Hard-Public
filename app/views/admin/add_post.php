@@ -19,16 +19,24 @@
   
     <div class="row g-3 mt-2">
         <div class="col-md-4">
-            <label for="post_image" class="form-label">Upload Image</label>
-            <input name="image" type="file" class="form-control" id="post_image" accept="image/*" required>
+            <label for="post_image" class="form-label">Upload Image</label> 
+            <input name="images[]" type="file" class="form-control" id="post_image" accept="image/*" required>
             <p class="text-muted">Short and simple filenames, no spaces. <br> If required use underscores/hyphens for example "test_image" or "test-image" <br><br>
-            Reduce filesize to at least 500kb or less, preferably lowest possible while retaining quality </p>
+            All images will be automatically resized and converted 👍</p>
+        </div>
+    </div>
+
+    <div class="row g-3 mt-2">
+        <div class="col-md-4">
+            <label for="post_secret_image" class="form-label">Upload Secret Image</label>
+            <input name="images[]" type="file" class="form-control" id="post_secret_image" accept="image/*">
+            <p class="text-muted">Same rules as above</p>
         </div>
     </div>
 
     <div class="row g-3 mt-0">
         <div class="col-md-6 col-lg-4">
-            <label for="post_date" class="form-label">Publish Date/Time (UTC/GMT)  <br> Format must be: <br>&nbsp;  YYYY-MM-DD HH:MM (24H)</label> 
+            <label for="post_date" class="form-label">Publish Date/Time <span class="not-bold text-muted">(UTC/GMT)</span>  <br><em><span class="not-bold"> Format must be: </span></em><br>&nbsp;  YYYY-MM-DD HH:MM (24H)</label> 
             <input type="text" class="form-control" id="post_date" name="post_date" value="<?php date_default_timezone_set("UTC"); echo date("Y-m-d H:i", time()); ?>"  required>
              
         </div>
@@ -46,14 +54,14 @@
 
     <div class="row g-3 mt-2">
         <div class="col-md-6 col-lg-4">
-            <label for="post_alt_text" class="form-label">Image Alt Text</label>
+            <label for="post_alt_text" class="form-label">Image Alt Text <span class="not-bold text-muted">(Resizable text box, bottom right corner)</span></label>
             <textarea type="text" name="post_alt_text" id="post_alt_text" class="form-control" rows="5" cols="30" placeholder="Alternative text for screenreaders and SEO"></textarea>
         </div>
     </div>
 
     <div class="row g-3 mt-2">
         <div class="col-md-6 col-lg-4">
-            <label for="post_hover_text" class="form-label">Image Hover Text (when you mouse over the image)</label>
+            <label for="post_hover_text" class="form-label">Image Hover Text <span class="not-bold text-muted">(when you mouse over the image)</span></label>
             <textarea type="text" name="post_hover_text" id="post_hover_text" class="form-control" rows="2" cols="30" placeholder="Image Hover Text"></textarea>
         </div>
     </div>

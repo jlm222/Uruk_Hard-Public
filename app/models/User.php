@@ -1,9 +1,9 @@
 <?php
     class User {
         private $db;
-
-        public function __construct($connection){
-            $this->db = $connection;
+        
+        public function __construct($db) {
+            $this->db = $db;
         }
 
         // Login User

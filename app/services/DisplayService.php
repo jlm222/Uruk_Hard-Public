@@ -33,8 +33,8 @@
 
         public function displayLogic($post_date, $row){
             // Change name to get thumbnail
-            $post_image = substr_replace($row['post_image'], "_thumb.jpg", -4);
-            $post_secret_image = substr_replace($row['post_image'], "_thumb.jpg", -4);
+            $post_image = substr_replace($row['post_image'], "_thumb.jpg", strrpos($row['post_image'], '.'));
+            $post_secret_image = $row['post_secret_image'];
 
             return [ 
                 'post_id' => $row['post_id'],
@@ -45,7 +45,12 @@
                 'post_status' => $row['post_status'],
                 'post_alt_text' => $row['post_alt_text'],
                 'post_hover_text' => $row['post_hover_text'],
-                'post_link' => URLROOT . "/pages/comic/{$row['post_id']}"
+                'post_link' => URLROOT . "/pages/comic/{$row['post_id']}",
+                'img_link' => COMICFOLDER . "{$row['post_id']}/{$post_image}",
+                'secret_img_link' => COMICFOLDER . "{$row['post_id']}/{$post_secret_image}",
+                'form_action' => URLROOT . "/posts/post",
+                'edit_link' => URLROOT . "/admin/editPost/{$row['post_id']}",
+                'delete_link' => URLROOT . "/admin/deletePost/{$row['post_id']}"
             ];
         }
 

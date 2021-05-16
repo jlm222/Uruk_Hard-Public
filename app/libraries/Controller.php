@@ -27,7 +27,7 @@
                 require_once '../app/views/' . $view . '.php';
             } else {
                 // View does not exist
-                die('View does not exist');
+                exit('View does not exist');
             }
         }
 
@@ -39,8 +39,8 @@
                  // Instantiate service
                 return new $service();
             } else {
-                // View does not exist
-                die('Service does not exist');
+                // Service does not exist
+                exit('Service does not exist');
             }
         }
     }

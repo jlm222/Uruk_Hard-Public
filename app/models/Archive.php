@@ -1,9 +1,9 @@
 <?php 
     class Archive {
         private $db;
-
-        public function __construct($connection){
-            $this->db = $connection;
+        
+        public function __construct($db) {
+            $this->db = $db;
         }
 
         // Gets total number of pages
