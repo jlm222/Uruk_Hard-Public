@@ -2,6 +2,10 @@
   Options -Multiviews
   RewriteEngine On
   RewriteBase /Uruk_Hard-Public/public
+
+	RewriteCond %{HTTP_HOST} ^www\.urukhardplayhard\.com [NC]
+	RewriteRule (.*) https://urukhardplayhard.com/$1 [L,R=301]
+
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]

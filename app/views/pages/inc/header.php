@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The home of Lord of the Rings comics.">
+    <meta name="description" content="Welcome to Uruk Hard Play Hard, the home of Lord of the Rings webcomics. ">
     <title>
     <?= !isset($data['archive_header']) ? 
         "{$data['post_title']} - " . SITENAME : 
@@ -23,6 +23,15 @@
     <link rel="manifest" href="<?= URLROOT; ?>/site.webmanifest">
     <!-- Javascript -->
     <script defer src="<?= URLROOT; ?>/js/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCLENLND3G"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MCLENLND3G');
+    </script>
 </head>
 
 <body class="container">

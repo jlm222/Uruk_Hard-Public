@@ -22,7 +22,7 @@
         </div>
     
         <div class="copyright">
-            <p class="copyright__text">©2020-2021 &nbsp;|&nbsp;  A.A George</p> 
+            <p class="copyright__text">©2020-<?= date("Y"); ?> &nbsp;|&nbsp;  A.A George</p> 
         </div>
     </footer>
 </body>
